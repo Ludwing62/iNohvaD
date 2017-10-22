@@ -26,10 +26,11 @@ and open the template in the editor.
     }
   }
     </style>
+
 </head>
 <body>
     <?php include 'lib/navbar_principal.php'; ?>
-
+    
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -69,21 +70,20 @@ and open the template in the editor.
     <div class="col-sm-4">
       <img src="img/6.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>Producto 1</p>
+        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"> Agregar</span></butto>
     </div>
     <div class="col-sm-4"> 
       <img src="img/11.jpg" class="img-responsive" style="width:100%" alt="Image">  
       <p>Producto 2</p>
+        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"> Agregar</span></butto>
     </div>
     <div class="col-sm-4">
       <img src="img/7.jpg" class="img-responsive" style="width:100%" alt="Image">
       <p>Producto 3</p>
+      <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"> Agregar</span></butto>
     </div>
   </div>
-</div><br>
-
-
-  
-
-
 </body>
+<?php include 'lib/footer.php'; ?>
+
 </html>
