@@ -1,16 +1,33 @@
-
-<!--Nombre, contraseña, del -->
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
+$host="localhost";
+$user="root";
+$password="";
+$db="inohvad";
+$con = new mysqli($host,$user,$password,$db);
 
-// Crear conexión 
-$conn = new mysqli($servername, $username, $password);
+mysql_connect("localhost","root","");
+mysql_select_db("inovad");
 
-// Check connection
-if ($conn->connect_error) {
-    die("Conexión Fallida: " . $conn->connect_error);
-} 
-echo "Conexión Exitosa";
+  
+
+  function Conectarse() 
+  {
+    $link = mysqli_connect("localhost", "root", "", "inohvad");
+    if(!$link)
+    {
+      echo '<br>Ha sucedido un error inesperado en la conexiÃ³n de la base de datos';
+    }
+    return $link;
+  }
+
+  function disconnectDB($link)
+  {
+    $close = mysqli_close($link);
+    if(!$close)
+    {
+      echo '<br>Ha sucedido un error inesperado en la desconexiÃ³n de la base de datos';
+    }
+    return $close;
+  }
+
 ?>

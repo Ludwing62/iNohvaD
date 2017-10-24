@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Iniciar Sesión</title>
@@ -14,14 +14,26 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="../../index.php">iNohva Muebles</a>
+       <ul class="nav navbar-nav">
+      <li><a href="#">CLIENTES</a></li>
+      <li><a href="#">EMPLEADOS</a></li>
+      <li><a href="#">INVENTARIO</a></li>
+      <li><a href="#">PRODUCTOS PUBLICADOS</a></li>
+    </ul>
     </div>
+
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown"><a href="../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
+      <ul class="nav navbar-nav">
+       
+                 <li><a href="../../core/admin_logout.php" align="center"><span class="glyphicon glyphicon-log-in"></span>  Cerrar Sesión </a></li>
     </ul>
+
   </div>
 </nav>
   
 
 </body>
 </html>
+
