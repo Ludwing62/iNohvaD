@@ -15,10 +15,10 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="../../index.php">iNohva Muebles</a>
        <ul class="nav navbar-nav">
-      <li><a href="#">CLIENTES</a></li>
-      <li><a href="#">EMPLEADOS</a></li>
-      <li><a href="#">INVENTARIO</a></li>
-      <li><a href="#">PRODUCTOS PUBLICADOS</a></li>
+      <li><a href="../../view/administrador/admin_clientes.php">CLIENTES</a></li>
+      <li><a href="../../view/administrador/admin_empleados.php">EMPLEADOS</a></li>
+      <li><a href="../../view/administrador/admin_inventario.php">INVENTARIO</a></li>
+      <li><a href="../../view/administrador/admin_productos.php">PRODUCTOS PUBLICADOS</a></li>
     </ul>
     </div>
 

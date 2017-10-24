@@ -9,8 +9,10 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 <html>
 <head>
 	<title>Bienvenido Administrador</title>
+	<?php include '../../lib/admin_navbar.php'; ?>
+
 </head>
 <body>
-<?php include '../../lib/admin_navbar.php'; ?>
+
 </body>
 </html>
