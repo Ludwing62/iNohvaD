@@ -10,6 +10,47 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 
    
     <title>Administrador / Clientes</title> 
+    <script type="text/javascript">
+(function(document) {
+  'use strict';
+
+  var LightTableFilter = (function(Arr) {
+
+    var _input;
+
+    function _onInputEvent(e) {
+      _input = e.target;
+      var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+      Arr.forEach.call(tables, function(table) {
+        Arr.forEach.call(table.tBodies, function(tbody) {
+          Arr.forEach.call(tbody.rows, _filter);
+        });
+      });
+    }
+
+    function _filter(row) {
+      var text = row.textContent.toLowerCase(), val = _input.value.toLowerCase();
+      row.style.display = text.indexOf(val) === -1 ? 'none' : 'table-row';
+    }
+
+    return {
+      init: function() {
+        var inputs = document.getElementsByClassName('light-table-filter');
+        Arr.forEach.call(inputs, function(input) {
+          input.oninput = _onInputEvent;
+        });
+      }
+    };
+  })(Array.prototype);
+
+  document.addEventListener('readystatechange', function() {
+    if (document.readyState === 'complete') {
+      LightTableFilter.init();
+    }
+  });
+
+})(document);
+</script>   
     <style type="text/css"> 
 /*General styles*/
 
@@ -121,6 +162,18 @@ body
   border-bottom: none;
 }
 
+#buscar{
+  width: 300px;
+  font-size: 22px;
+  color: black;
+  background: #E0E0E0 ;
+  padding-left: 20px ;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin:10px; 
+}
+
     </style> 
     <?php include '../../lib/admin_navbar.php'; ?>
 
@@ -132,8 +185,11 @@ body
   <!-- <a href="../../module/administrador/views/registroform.php" class="btn btn-success navbar-btn" title="Agregar empleado" ><span  class='glyphicon glyphicon-user'></span></a><br> -->
   
 </div>
-<br>
-    <table class="features-table">
+<center>
+  <div class="derecha" id="buscar">Buscar <input type="search" class="light-table-filter" data-table="order-table" placeholder="Filtro"></div>
+  </center>
+  <div class="datagrid"></div>
+    <table class="features-table order-table">
     <?php  
         include '../../core/config.php';        
         

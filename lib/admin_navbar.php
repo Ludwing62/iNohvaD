@@ -13,7 +13,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="../../index.php">iNohva Muebles</a>
+      <a class="navbar-brand" href="../../view/administrador/index.php">iNohva Muebles</a>
        <ul class="nav navbar-nav">
       <li><a href="../../view/administrador/admin_clientes.php">CLIENTES</a></li>
       <li><a href="../../view/administrador/admin_empleados.php">EMPLEADOS</a></li>
