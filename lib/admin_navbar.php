@@ -15,7 +15,7 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="../../view/administrador/index.php">iNohva Muebles</a>
        <ul class="nav navbar-nav">
-      <li><a href="../../view/administrador/admin_clientes.php">CLIENTES</a></li>
+      <li><a href="../../view/administrador/admin_usuario.php">USUARIOS</a></li>
       <li><a href="../../view/administrador/admin_empleados.php">EMPLEADOS</a></li>
       <li><a href="../../view/administrador/admin_inventario.php">INVENTARIO</a></li>
       <li><a href="../../view/administrador/admin_productos.php">PRODUCTOS PUBLICADOS</a></li>

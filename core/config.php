@@ -2,7 +2,7 @@
 $host="localhost";
 $user="root";
 $password="";
-$db="inohvad";
+$db="inohvamerida";
 $con = new mysqli($host,$user,$password,$db);
 
 mysql_connect("localhost","root","");
@@ -12,7 +12,7 @@ mysql_select_db("inovad");
 
   function Conectarse() 
   {
-    $link = mysqli_connect("localhost", "root", "", "inohvad");
+    $link = mysqli_connect("localhost", "root", "", "inohvamerida");
     if(!$link)
     {
       echo '<br>Ha sucedido un error inesperado en la conexiÃ³n de la base de datos';
