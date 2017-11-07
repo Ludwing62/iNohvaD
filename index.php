@@ -36,6 +36,10 @@ and open the template in the editor.
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+                  <li data-target="#myCarousel" data-slide-to="3"></li>
+
+
     </ol>
 
     <!-- Wrapper for slides -->
@@ -51,7 +55,21 @@ and open the template in the editor.
         <div class="carousel-caption">
         </div>      
       </div>
+
+       <div class="item">
+        <img src="img/1.jpg" alt="img">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+    
+     <div class="item">
+        <img src="img/1.jpg" alt="img">
+        <div class="carousel-caption">
+        </div>      
+      </div>
+  
     </div>
+
 
     <!-- Controles Izquierda y Derecha -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
