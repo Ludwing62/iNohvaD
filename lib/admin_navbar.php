@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Iniciar Sesión</title>
@@ -23,6 +23,13 @@
     </div>
 
     <ul class="nav navbar-nav navbar-right">
+       <li><a class="navbar-brand" href="./registro.php"></a></li>
+      <li><a href="./home.php"></a></li>
+      <?php if(!isset($_SESSION["user_id"])):?>
+    <?php else:?>
+    
+    <?php endif;?>
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" align="center"><span class="glyphicon glyphicon-user">  <?php echo $_SESSION['id_usuario']; ?>
       <li class="dropdown"><a href="../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
       <ul class="nav navbar-nav">

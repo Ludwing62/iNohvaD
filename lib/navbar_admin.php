@@ -11,11 +11,11 @@
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
+    <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="../../index.php">iNohva Muebles</a>
     </div>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right"> 
       <li class="dropdown"><a href="../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
     </ul>

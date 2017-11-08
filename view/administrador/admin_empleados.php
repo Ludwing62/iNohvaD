@@ -195,7 +195,7 @@ body
         include '../../core/config.php';        
         
         $link = Conectarse();  
-        $result= mysqli_query($link,"Select * from empleado");
+        $result= mysqli_query($link,"Select * from usuarios WHERE tipo_usuario = 2");
         while ($row=mysqli_fetch_row($result))
 
         {   
