@@ -16,7 +16,8 @@ if(!empty($_POST)){
         $user_id=$r["usuario"];
         $id_usuario=$r["id_administrador"];        
         $email=$r["email"];   
-        $nom=$r["nombre"];
+       
+       
 
 
     break;
@@ -29,11 +30,7 @@ if(!empty($_POST)){
         $_SESSION["user_id"]=$user_id;
         $_SESSION["email"]=$email;
         $_SESSION["id_usuario"]=$id_usuario;
-        $_SESSION["nom"]=$nombre;
         
-        //$_SESSION["nacimiento"]=$fecha;
-        //$_SESSION["perfil"]=$perfil;
-
 
 
 

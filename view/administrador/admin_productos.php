@@ -212,7 +212,7 @@ body
 
 
               
-                echo "<td><a title='modificar producto' href='Modificar.php?id={$row[0]}' class='btn btn-info'><span class='glyphicon glyphicon-pencil'></span></a> <a title='Eliminar Producto' href='../../view/php/eliminar_producto.php?id={$row[0]}' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>";
+                echo "<td><a title='modificar producto' href='Modificar.php?id={$row[0]}' class='btn btn-info'><span class='glyphicon glyphicon-pencil'></span></a> <a title='Eliminar Producto' href='../../view/administrador/php/eliminar_producto.php?id={$row[0]}' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>";
             echo  "</tr>";
         }
     ?>

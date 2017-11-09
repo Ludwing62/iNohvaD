@@ -210,9 +210,28 @@ body
 
 
 
-              
-                echo "<td><a title='Modificar empleado' href='modificar.php?id={$row[0]}' class='btn btn-info'><span class='glyphicon glyphicon-pencil'></span></a> <a title='Eliminar empleado' href='../../view/php/eliminar_empleado.php?id={$row[0]}' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>";
+              // Opciones de Eliminar y Modificar empleado, activa modal.
+               echo "<td><button type='button'  class='btn btn-info btn-lg' data-toggle='modal' data-target='#myModal' title='Modificar empleado'><span class='glyphicon glyphicon-pencil'></span></button> <button type='button'  class='btn btn-danger btn-lg' data-toggle='modal' data-target='#myModal' title='Eliminar empleado'><span class='glyphicon glyphicon-trash'></span></button></td>";
             echo  "</tr>";
+
+            // Modal, con advertencia y confirmación de acciones para el empleado
+
+             echo "<div class='modal fade' id='myModal' role='dialog'>";
+            echo "<div class='modal-dialog'>";
+            echo "<div class='modal-content'>";
+            echo "<div class='modal-header'>
+            <button type='button' class='close' data-dismiss='modal'></button>
+            <h2 class='modal-title' align='center'>Advertencia</h2>";
+            echo "<div class='alert alert-danger'>
+            <h5><strong>¿Seguro que desea borrar, este usuario de manera permanente?</strong></h5>";
+            echo "</div>";
+           echo "<div class='modal-footer'>
+          <a title='Eliminar empleado' href='../../view/administrador/php/eliminar_usuario.php?id={$row[0]}' class='btn btn-danger'>Eliminar usuario</a>
+          <button type='button' class='btn btn-default' data-dismiss='modal'>Cancelar</button>";
+
+           echo "</div>";
+           echo "</div>";
+           echo "</div>";
         }
     ?>
 

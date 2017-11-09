@@ -29,7 +29,7 @@
     <?php else:?>
     
     <?php endif;?>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" align="center"><span class="glyphicon glyphicon-user">  <?php echo $_SESSION['id_usuario']; ?>
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" align="center"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['user_id']; ?>
       <li class="dropdown"><a href="../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
       <ul class="nav navbar-nav">
