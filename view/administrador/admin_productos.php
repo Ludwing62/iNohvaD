@@ -180,7 +180,7 @@ body
     <div id="main">
     
     <div class="container-fluid bg-2 text-center">
-  <h3>LISTA / PRODUCSOTS</h3>
+  <h3>LISTA / PRODUCTOS</h3>
   <p>Información del producto </p>
   <td><a title='Agregar producto' href='modificar.php?id={$row[0]}' class='btn btn-success'><span class='glyphicon glyphicon-user'></span> Agregar Producto</a>
   <!-- <a href="../../module/administrador/views/registroform.php" class="btn btn-success navbar-btn" title="Agregar empleado" ><span  class='glyphicon glyphicon-user'></span></a><br> -->
@@ -212,7 +212,7 @@ body
 
 
               
-                echo "<td><a title='modificar producto' href='Modificar.php?id={$row[0]}' class='btn btn-info'><span class='glyphicon glyphicon-pencil'></span></a> <a title='Eliminar Producto' href='../../view/php/eliminar_producto.php?id={$row[0]}' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>";
+                echo "<td><a title='modificar producto' href='Modificar.php?id={$row[0]}' class='btn btn-info'><span class='glyphicon glyphicon-pencil'></span></a> <a title='Eliminar Producto' href='../../view/administrador/php/eliminar_producto.php?id={$row[0]}' class='btn btn-danger'><span class='glyphicon glyphicon-trash'></span></a></td>";
             echo  "</tr>";
         }
     ?>

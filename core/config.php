@@ -5,9 +5,6 @@ $password="";
 $db="inohvamerida";
 $con = new mysqli($host,$user,$password,$db);
 
-mysql_connect("localhost","root","");
-mysql_select_db("inovad");
-
   
 
   function Conectarse() 

@@ -14,9 +14,11 @@ if(!empty($_POST)){
       while ($r=$query->fetch_array()) {
 
         $user_id=$r["usuario"];
-        $id_usuario=$r["id_administrador"];
-        
+        $id_usuario=$r["id_administrador"];        
         $email=$r["email"];   
+       
+       
+
 
     break;
       }   
@@ -29,9 +31,6 @@ if(!empty($_POST)){
         $_SESSION["email"]=$email;
         $_SESSION["id_usuario"]=$id_usuario;
         
-        //$_SESSION["nacimiento"]=$fecha;
-        //$_SESSION["perfil"]=$perfil;
-
 
 
 
