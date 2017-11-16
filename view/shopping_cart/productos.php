@@ -1,8 +1,8 @@
 <?php
-// connect to database
+// conexion a la bd
 include 'config/database.php';
  
-// page headers
+// encabezado de pagina
 $page_title="Lista de productos";
 include 'head.php';
  
@@ -12,7 +12,7 @@ $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : "1";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "1";
  
-// show message
+// mostrar mensaje
 if($action=='added'){
     echo "<div class='alert alert-info'>";
         echo "<strong>{$name}</strong> ¡agregado a tu carrito!";
@@ -25,7 +25,7 @@ else if($action=='failed'){
     echo "</div>";
 }
  
-// select products from database
+// seleccionar productos de la bd
 $query = "SELECT p.id, p.name, p.price, ci.quantity 
         FROM products p 
             LEFT JOIN cart_items ci
