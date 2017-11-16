@@ -17,7 +17,7 @@
        <ul class="nav navbar-nav">
       <li><a href="../../view/administrador/admin_usuario.php">USUARIOS</a></li>
       <li><a href="../../view/administrador/admin_empleados.php">EMPLEADOS</a></li>
-      <li><a href="../../view/administrador/admin_inventario.php">INVENTARIO</a></li>
+    
       <li><a href="../../view/administrador/admin_productos.php">PRODUCTOS PUBLICADOS</a></li>
     </ul>
     </div>
@@ -29,12 +29,23 @@
     <?php else:?>
     
     <?php endif;?>
-         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" align="center"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['user_id']; ?>
+        
       <li class="dropdown"><a href="../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
+      
       <ul class="nav navbar-nav">
+
+      <li class="dropdown">
+         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" align="center"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['user_id']; ?>
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="../../view/administrador/admin_inventario.php"><span class="glyphicon glyphicon-inbox"></span> Inventario </a></li>
+          
+          <li><a href="../../core/admin_logout.php"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesión </a></li>
+          
+        </ul>
        
-                 <li><a href="../../core/admin_logout.php" align="center"><span class="glyphicon glyphicon-log-in"></span>  Cerrar Sesión </a></li>
+                
     </ul>
 
   </div>
