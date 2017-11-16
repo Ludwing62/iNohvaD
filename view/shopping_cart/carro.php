@@ -2,15 +2,15 @@
 // connect to database
 include 'config/database.php';
  
-// page headers
+// headers
 $page_title="Carrito";
 include 'head.php';
  
-// parameters
+// parametros
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
  
-// display a message
+// Mensaje por si no hay nada
 if($action=='removed'){
     echo "<div class='alert alert-info'>";
         echo "<strong>{$name}</strong> fue eliminado del carrito!";
@@ -35,7 +35,7 @@ else if($action=='invalid_value'){
     echo "</div>";
 }
  
-// select products in the cart
+// Seleccionar productos en el carro
 $query="SELECT p.id, p.name, p.price, ci.quantity, ci.quantity * p.price AS subtotal  
             FROM cart_items ci  
                 LEFT JOIN products p 
@@ -44,18 +44,18 @@ $query="SELECT p.id, p.name, p.price, ci.quantity, ci.quantity * p.price AS subt
 $stmt=$con->prepare( $query );
 $stmt->execute();
  
-// count number of rows returned
+// contar numero de filas devueltas
 $num=$stmt->rowCount();
  
 if($num>0){
      
-    //start table
+    //inicio de la tabla
     echo "<table class='table table-hover table-responsive table-bordered'>";
      
-    // our table heading
+    // encabezado de la tabla
     echo "<tr>";
         echo "<th class='textAlignLeft'>Nombre del producto</th>";
-        echo "<th>Precio (USD)</th>";
+        echo "<th>Precio (MXN)</th>";
             echo "<th style='width:15em;'>Cantidad</th>";
             echo "<th>Sub Total</th>";
             echo "<th>Acciones</th>";
@@ -111,7 +111,6 @@ if($num>0){
     echo "<strong>No se han encontrado productos</strong> en tu carrito!";
     echo "</div>";
 }
- 
- 
+
 include 'footer.php';
 ?>

@@ -20,7 +20,7 @@
                 <li <?php echo $page_title=="Cart" ? "class='active'" : ""; ?> >
                     <a href="carro.php">
                         <?php
-                        // query to count all product in cart
+                        // query para contar los productos en el carrito
                         $query = "SELECT count(*) FROM cart_items WHERE user=1";
                       
                         // prepare query statement
