@@ -103,5 +103,4 @@ and open the template in the editor.
   </div>
 </body>
 <?php include 'lib/footer.php'; ?>
-
 </html>
