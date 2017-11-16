@@ -18,6 +18,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">iNohva Muebles</a>
+      <a class="navbar-brand" href="view/shopping_cart/productos.php">Productos</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
