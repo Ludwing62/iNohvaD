@@ -24,7 +24,7 @@ if(!empty($_POST)){
       }   
 
       if($user_id==null){
-        print "<script>alert(\"Acceso invalido.\");window.location='../view/administrador/admin_login.php';</script>";
+        print "<script>alert(\"Acceso invalido.\");window.location='../view/administrador/vistas/admin_login.php';</script>";
       }else{
         session_start();
         $_SESSION["user_id"]=$user_id;

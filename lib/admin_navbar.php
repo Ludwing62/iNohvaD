@@ -13,12 +13,12 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="../../view/administrador/index.php">iNohva Muebles</a>
+      <a class="navbar-brand"><strong>iNohva Mérida</strong></a>
        <ul class="nav navbar-nav">
-      <li><a href="../../view/administrador/admin_usuario.php">USUARIOS</a></li>
-      <li><a href="../../view/administrador/admin_empleados.php">EMPLEADOS</a></li>
+      <li><a href="admin_usuario.php">USUARIOS</a></li>
+      <li><a href="admin_empleados.php">EMPLEADOS</a></li>
     
-      <li><a href="../../view/administrador/admin_productos.php">PRODUCTOS PUBLICADOS</a></li>
+      <li><a href="admin_productos.php">PRODUCTOS PUBLICADOS</a></li>
     </ul>
     </div>
 
@@ -30,7 +30,7 @@
     
     <?php endif;?>
         
-      <li class="dropdown"><a href="../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+      <li class="dropdown"><a href="../../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
       
       <ul class="nav navbar-nav">
