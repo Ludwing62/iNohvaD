@@ -1,31 +1,31 @@
 <?php
-// connect to database
+// conectar bd
 include 'config/database.php';
  
-// get the product id
+// obtener id de producto
 $id = isset($_GET['id']) ? $_GET['id'] : "";
 $name = isset($_GET['name']) ? $_GET['name'] : "";
 $user_id=1;
  
-// delete query
+// eliminar consulta
 $query = "DELETE FROM cart_items WHERE product_id=? AND user_id=?";
  
-// prepare query
+// prepaerar consulta
 $stmt = $con->prepare($query);
  
-// bind values
+// enlazar valores
 $stmt->bindParam(1, $id);
 $stmt->bindParam(2, $user_id);
  
-// execute query
+// ejecutar consulta
 if($stmt->execute()){
-    // redirect and tell the user product was removed
+    // redirigir y decirle al usuario que el producto fue eliminado
     header('Location: carro.php?action=removed&id=' . $id . '&name=' . $name);
 }
  
-// if remove failed
+// si se elimino el error
 else{
-    // redirect and tell the user it failed
+    // redirigir y decirle al usuario que fallo
     header('Location: carro.php?action=failed&id=' . $id . '&name=' . $name);
 }
 ?>
