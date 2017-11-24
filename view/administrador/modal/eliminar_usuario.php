@@ -21,6 +21,7 @@
       </div>
 
 
+
 <!--Modal eliminar Empleado -->
 <div class="modal fade" id="borrar_empleado" role="dialog" align="center">
     <div class="modal-dialog">
@@ -44,6 +45,7 @@
       </div>
       </div>
 
+
 <!-- Modal eliminar Productos Publicados -->
 <div class="modal fade" id="borrar_producto" role="dialog" align="center">
     <div class="modal-dialog">
@@ -65,4 +67,5 @@
     </form>
       </div>
       </div>
+
 
