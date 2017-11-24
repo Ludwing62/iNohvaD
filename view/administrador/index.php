@@ -13,11 +13,11 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 
         <!-- NavBar principal del administrador -->
         <?php include '../../lib/admin_navbar.php'; ?>
-       
+        <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
+    </head>
+                    <body>
 
+                    </body>
 
-<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-
-    </body>
 </html>
