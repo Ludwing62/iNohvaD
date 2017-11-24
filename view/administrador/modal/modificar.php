@@ -36,7 +36,6 @@
     </form>
       </div>
       </div>
-</form></div></div>
 
 <!-- // Modal modificar Empleado -->
 <div class="modal fade" id="modifica_empleado" role="dialog">
@@ -110,4 +109,6 @@
         </div> 
         
 </form></div></div>
+
+
 
