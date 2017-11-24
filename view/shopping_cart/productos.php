@@ -35,7 +35,7 @@ $query = "SELECT p.id, p.name, p.price, ci.quantity
 $stmt = $con->prepare( $query );
 $stmt->execute();
  
-// count number of products returned
+// conteo de numero de productos devueltos
 $num = $stmt->rowCount();
  
 if($num>0){
@@ -43,7 +43,7 @@ if($num>0){
     //start table
     echo "<table class='table table-hover table-responsive table-bordered'>";
      
-        // our table heading
+        // encabezado de la tabla de productos a mostrar
         echo "<tr>";
             echo "<th class='textAlignLeft'>Nombre del producto</th>";
             echo "<th>Precio (USD)</th>";
@@ -54,7 +54,7 @@ if($num>0){
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             extract($row);
              
-            //creating new table row per record
+            //aqui se crea nueva fila de tabla para registro
             echo "<tr>";
                 echo "<td>";
                     echo "<div class='product-id' style='display:none;'>{$id}</div>";
@@ -86,7 +86,7 @@ if($num>0){
     echo "</table>";
 }
  
-// tell the user if there's no products in the database
+// echo para decirle al usuario si no hay productos en la base de datos
 else{
     echo "No hay productos encontrados.";
 }

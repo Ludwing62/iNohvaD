@@ -23,16 +23,16 @@
                         // query para contar los productos en el carrito
                         $query = "SELECT count(*) FROM cart_items WHERE user=1";
                       
-                        // prepare query statement
+                        // preparar la declaracion de la consulta
                         $stmt = $con->prepare( $query );
                          
-                        // execute query
+                        // ejecutar solicitud
                         $stmt->execute();
                       
-                        // get row value
+                        // obtener valor de fila
                         $rows = $stmt->fetch(PDO::FETCH_NUM);
                       
-                        // return count
+                        // devolver conteo
                         $cart_count=$rows[0];
                         ?>
                         Carrito <span class="badge" id="comparison-count"><?php echo $cart_count; ?></span>
@@ -40,7 +40,7 @@
                 </li>
             </ul>
         </div><!--/.nav-collapse -->
-          
+
     </div>
 </div>
 <!-- /navbar -->
