@@ -8,8 +8,8 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 <!DOCTYPE html>
 <html lang="en"><head>
 
-   
-    <title>Administrador / Inventario</title> 
+
+    <title>Administrador / Inventario</title>
     <script type="text/javascript">
 (function(document) {
   'use strict';
@@ -50,8 +50,8 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
   });
 
 })(document);
-</script>   
-    <style type="text/css"> 
+</script>
+    <style type="text/css">
 /*General styles*/
 
 body
@@ -84,9 +84,9 @@ body
   border-spacing: 0;
   text-shadow: 0 1px 0 #fff;
   color: #2a2a2a;
-  background: #fafafa;  
+  background: #fafafa;
   background-image: -moz-linear-gradient(top, #fff, #eaeaea, #fff); /* Firefox 3.6 */
-  background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff)); 
+  background-image: -webkit-gradient(linear,center bottom,center top,from(#fff),color-stop(0.5, #eaeaea),to(#fff));
 }
 
 .features-table td
@@ -126,19 +126,19 @@ body
 
 .features-table td:nth-child(7)
 {
-  background: #e7f3d4;  
+  background: #e7f3d4;
   background: rgba(184,243,85,0.3);
 }
 
 /*Header*/
 .features-table thead td
 {
-  font: bold 1.3em 'trebuchet MS', 'Lucida Sans', Arial;  
+  font: bold 1.3em 'trebuchet MS', 'Lucida Sans', Arial;
   -moz-border-radius-topright: 10px;
-  -moz-border-radius-topleft: 10px; 
+  -moz-border-radius-topleft: 10px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
-  border-top: 1px solid #eaeaea; 
+  border-top: 1px solid #eaeaea;
 }
 
 .features-table thead td:first-child
@@ -149,9 +149,9 @@ body
 /*Footer*/
 .features-table tfoot td
 {
-  font: bold 1.4em Georgia;  
+  font: bold 1.4em Georgia;
   -moz-border-radius-bottomright: 10px;
-  -moz-border-radius-bottomleft: 10px; 
+  -moz-border-radius-bottomleft: 10px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom: 1px solid #dadada;
@@ -171,35 +171,35 @@ body
   text-align: center;
   border-radius: 10px;
   padding: 10px;
-  margin:10px; 
+  margin:10px;
 }
 
-    </style> 
+    </style>
     <?php include '../../../lib/admin_navbar.php'; ?>
 
     <div id="main">
-    
+
     <div class="container-fluid bg-2 text-center">
   <h3>LISTA / PRODUCTOS</h3>
   <p>Información del producto </p>
   <td><a title='Agregar producto' href='modificar.php?id={$row[0]}' class='btn btn-success'><span class='glyphicon glyphicon-user'></span> Agregar Producto</a>
   <!-- <a href="../../module/administrador/views/registroform.php" class="btn btn-success navbar-btn" title="Agregar empleado" ><span  class='glyphicon glyphicon-user'></span></a><br> -->
-  
+
 </div>
 <center>
   <div class="derecha" id="buscar">Buscar <input type="search" class="light-table-filter" data-table="order-table" placeholder="Filtro"></div>
   </center>
   <div class="datagrid"></div>
     <table class="features-table order-table">
-    <?php  
-        include '../../../core/config.php';        
-        
+    <?php
+        include '../../../core/config.php';
+
         $titulo3 = "Eliminar Producto";
-        $link = Conectarse();  
+        $link = Conectarse();
         $result= mysqli_query($link,"Select * from producto");
         while ($row=mysqli_fetch_row($result))
 
-        {   
+        {
             echo  "<tr>";
 
                 echo"<td>$row[0]</td>";
@@ -209,7 +209,7 @@ body
                 echo"<td>$row[4]</td>";
 
 
-                
+
 
 
               // Botones de modificar y eliminar productos
@@ -236,12 +236,12 @@ body
           </tr>
         </thead>
         <tfoot>
-         
+
         </tbody>
     </table>
-    
+
 
   </div>
- 
+
  </body>
 </html>
