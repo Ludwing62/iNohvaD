@@ -15,10 +15,10 @@
     <div class="navbar-header">
       <a class="navbar-brand"><strong>iNohva Mérida</strong></a>
        <ul class="nav navbar-nav">
-      <li><a href="../view/administrador/view/admin_usuario.php">USUARIOS</a></li>
-      <li><a href="../view/administrador/view/admin_empleados.php">EMPLEADOS</a></li>
+      <li><a href="../administrador/view/admin_usuario.php">USUARIOS</a></li>
+      <li><a href="../administrador/view/admin_empleados.php">EMPLEADOS</a></li>
     
-      <li><a href="producto/view/bannerlist.php">PRODUCTOS PUBLICADOS</a></li>
+      <li><a href="producto/admin/bannerlist.php">PRODUCTOS PUBLICADOS</a></li>
     </ul>
     </div>
 
@@ -30,7 +30,7 @@
     
     <?php endif;?>
         
-      <li class="dropdown"><a href="../../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+      <li class="dropdown"><a href="../../../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
       
       <ul class="nav navbar-nav">

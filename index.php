@@ -1,106 +1,138 @@
+<?php
+include("core/config.php");
+?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html lang="en">
 <head>
-    <title>Bienvenido a iNohva Muebles</title>
-    <style>
-        footer {
-      background-color: #FFFFFF;
-      padding: 25px;
-    }
-    
-  .carousel-inner img {
-      width: 90%; /* Set width to 100% */
-      margin: auto;
-      min-height:90px;
-  }
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>iNohva Mérida Muebles</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
-    }
-  }
-    </style>
-
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
 <body>
-    <?php include 'lib/navbar_principal.php'; ?>
-    
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-                  <li data-target="#myCarousel" data-slide-to="3"></li>
+<div class='container'>
+    <div class="row">
+        <div class="col-lg-12"><br>
+            <h1 class="page-header" align="center">Bienvenido a iNohva Mérida</h1>
+            <?php
+            $nums=1;
+            $sql_banner_top=mysqli_query($con,"select * from product where estado=1 order by orden ");
+            while($rw_banner_top=mysqli_fetch_array($sql_banner_top)){
+                ?>
 
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="<?php echo $rw_banner_top['titulo'];?>" data-caption="<?php echo $rw_banner_top['descripcion'];	?>" data-image="view/administrador/producto/img/banner/<?php echo $rw_banner_top['url_image'];?>" data-target="#image-gallery">
+                        <img class="img-responsive" src="view/administrador/producto/img/banner/<?php echo $rw_banner_top['url_image'];?>" alt="Another alt text">
+                    </a>
+                </div>
+                <?php
 
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="img/1.jpg" alt="img">
-        <div class="carousel-caption">
-        </div>      
-      </div>
-
-      <div class="item">
-        <img src="img/1.jpg" alt="img">
-        <div class="carousel-caption">
-        </div>      
-      </div>
-
-       <div class="item">
-        <img src="img/1.jpg" alt="img">
-        <div class="carousel-caption">
-        </div>      
-      </div>
-    
-     <div class="item">
-        <img src="img/1.jpg" alt="img">
-        <div class="carousel-caption">
-        </div>      
-      </div>
-  
+                if ($nums%4==0){
+                    echo '<div class="clearfix"></div>';
+                }
+                $nums++;
+            }
+            ?>
+<?php include ("lib/navbar_principal.php"); ?>
+        </div>
     </div>
+    <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="image-gallery-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <img id="image-gallery-image" class="img-responsive" src="">
+                    </center>
+                </div>
+                <div class="modal-footer">
 
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-info" id="show-previous-image">Anterior</button>
+                    </div>
 
-    <!-- Controles Izquierda y Derecha -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Siguiente</span>
-    </a>
-</div><br>
-<!-- Lo más destacado -->
-<div class="container text-center">    
-  <h3>¡LO MÁS VENDIDO!</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="img/6.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Producto 1</p>
-        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"> Agregar</span></button>
+                    <div class="col-md-8 text-justify" id="image-gallery-caption">
+                        This text will be overwritten by jQuery
+                    </div>
+
+                    <div class="col-md-2">
+                        <button type="button" id="show-next-image" class="btn btn-info">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-sm-4"> 
-      <img src="img/11.jpg" class="img-responsive" style="width:100%" alt="Image">  
-      <p>Producto 2</p>
-        <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"> Agregar</span></button>
-    </div>
-    <div class="col-sm-4">
-      <img src="img/7.jpg" class="img-responsive" style="width:100%" alt="Image">
-      <p>Producto 3</p>
-      <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"> Agregar</span></button>
-    </div>
-  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        loadGallery(true, 'a.thumbnail');
+        //This function disables buttons when needed
+        function disableButtons(counter_max, counter_current){
+            $('#show-previous-image, #show-next-image').show();
+            if(counter_max == counter_current){
+                $('#show-next-image').hide();
+            } else if (counter_current == 1){
+                $('#show-previous-image').hide();
+            }
+        }
+        /**
+         *
+         * @param setIDs        Sets IDs when DOM is loaded. If using a PHP counter, set to false.
+         * @param setClickAttr  Sets the attribute for the click handler.
+         */
+
+        function loadGallery(setIDs, setClickAttr){
+            var current_image,
+                selector,
+                counter = 0;
+
+            $('#show-next-image, #show-previous-image').click(function(){
+                if($(this).attr('id') == 'show-previous-image'){
+                    current_image--;
+                } else {
+                    current_image++;
+                }
+
+                selector = $('[data-image-id="' + current_image + '"]');
+                updateGallery(selector);
+            });
+
+            function updateGallery(selector) {
+                var $sel = selector;
+                current_image = $sel.data('image-id');
+                $('#image-gallery-caption').text($sel.data('caption'));
+                $('#image-gallery-title').text($sel.data('title'));
+                $('#image-gallery-image').attr('src', $sel.data('image'));
+                disableButtons(counter, $sel.data('image-id'));
+            }
+
+            if(setIDs == true){
+                $('[data-image-id]').each(function(){
+                    counter++;
+                    $(this).attr('data-image-id',counter);
+                });
+            }
+            $(setClickAttr).on('click',function(){
+                updateGallery($(this));
+            });
+        }
+    });
+</script>
+
 </body>
-<?php include 'lib/footer.php'; ?>
 </html>
+
+

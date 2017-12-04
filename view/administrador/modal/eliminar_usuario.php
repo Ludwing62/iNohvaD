@@ -19,6 +19,7 @@
     </form>
       </div>
       </div>
+      </form></div></div>
 
 
 
@@ -44,6 +45,7 @@
     </form>
       </div>
       </div>
+      </form></div></div>
 
 
 <!-- Modal eliminar Productos Publicados -->
@@ -67,5 +69,5 @@
     </form>
       </div>
       </div>
-
+</form></div></div>
 
