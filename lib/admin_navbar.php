@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Iniciar Sesión</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,10 +15,10 @@
     <div class="navbar-header">
       <a class="navbar-brand"><strong>iNohva Mérida</strong></a>
        <ul class="nav navbar-nav">
-      <li><a href="admin_usuario.php">USUARIOS</a></li>
-      <li><a href="admin_empleados.php">EMPLEADOS</a></li>
+      <li><a href="../administrador/view/admin_usuario.php">USUARIOS</a></li>
+      <li><a href="../administrador/view/admin_empleados.php">EMPLEADOS</a></li>
     
-      <li><a href="admin_productos.php">PRODUCTOS PUBLICADOS</a></li>
+      <li><a href="producto/admin/bannerlist.php">PRODUCTOS PUBLICADOS</a></li>
     </ul>
     </div>
 
@@ -30,7 +30,7 @@
     
     <?php endif;?>
         
-      <li class="dropdown"><a href="../../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+      <li class="dropdown"><a href="../../../../index.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
       
       <ul class="nav navbar-nav">

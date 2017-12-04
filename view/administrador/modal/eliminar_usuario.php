@@ -13,12 +13,13 @@
           </div>    
         </div> 
         <div class="modal-footer">
-          <a class="btn btn-danger" href=<?php echo ' "../php/eliminar_usuario.php?id={$row[0]}"';?>>Eliminar</a>
+          <a class="btn btn-danger">Eliminar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         </div>
     </form>
       </div>
       </div>
+      </form></div></div>
 
 
 
@@ -44,6 +45,7 @@
     </form>
       </div>
       </div>
+      </form></div></div>
 
 
 <!-- Modal eliminar Productos Publicados -->
@@ -61,11 +63,11 @@
           </div>    
         </div> 
         <div class="modal-footer">
-          <a class="btn btn-danger" href=<?php echo ' "../php/eliminar_usuario.php?id={$row[0]}"';?>>Eliminar</a>
+          <a class="btn btn-danger">Eliminar</a>
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         </div>
     </form>
       </div>
       </div>
-
+</form></div></div>
 

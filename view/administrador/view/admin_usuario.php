@@ -188,6 +188,7 @@ body
   <h3>LISTA / USUARIOS</h3>
   <p>Información de los usuarios </p>
   <td>
+     <td><a title='Agregar empleado' href='modificar.php?id={$row[0]}' class='btn btn-success'><span class='glyphicon glyphicon-user'></span> Agregar Usuario</a>
 <center>
   <div class="derecha" id="buscar">Buscar <input type="search" class="light-table-filter" data-table="order-table" placeholder="Ingrese su busqueda" align="center"></div>
   </center>
