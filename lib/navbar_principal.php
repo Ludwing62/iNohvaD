@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +21,9 @@
       <li class="dropdown"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="view/administrador/admin_login.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
-          
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
+          <li><a href="#">Page 1-1</a></li>
+          <li><a href="#">Page 1-2</a></li>
+          <li><a href="#">Page 1-3</a></li>
         </ul>
       </li>
       <li><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span></a></li>
