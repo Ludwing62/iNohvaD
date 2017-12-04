@@ -22,7 +22,7 @@ include("core/config.php");
             <h1 class="page-header" align="center">Bienvenido a iNohva Mérida</h1>
             <?php
             $nums=1;
-            $sql_banner_top=mysqli_query($con,"select * from product where estado=1 order by orden ");
+            $sql_banner_top=mysqli_query($con,"select * from banner where estado=1 order by orden ");
             while($rw_banner_top=mysqli_fetch_array($sql_banner_top)){
                 ?>
 
