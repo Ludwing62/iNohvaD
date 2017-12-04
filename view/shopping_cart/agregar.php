@@ -23,11 +23,11 @@ $stmt->bindParam(4, $created);
  
 // si la ia insercion a la bd tuvo exito
 if($stmt->execute()){
-    header('Location: productos.php?action=added&id=' . $id . '&name=' . $name);
+    header('Location: productos.php?action=added&id=' . $id . '&name=' . $titulo);
 }
  
 // si falla
 else{
-     header('Location: productos.php?action=failed&id=' . $id . '&name=' . $name);
+     header('Location: productos.php?action=failed&id=' . $id . '&name=' . $titulo);
 }
  
