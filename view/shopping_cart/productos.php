@@ -9,28 +9,28 @@ include 'head.php';
 // to prevent undefined index notice
 $action = isset($_GET['action']) ? $_GET['action'] : "";
 $product_id = isset($_GET['product_id']) ? $_GET['product_id'] : "1";
-$name = isset($_GET['name']) ? $_GET['name'] : "";
+$titulo = isset($_GET['name']) ? $_GET['name'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "1";
  
 // mostrar mensaje
 if($action=='added'){
     echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> ¡agregado a tu carrito!";
+        echo "<strong>{$titulo}</strong> ¡agregado a tu carrito!";
     echo "</div>";
 }
  
 else if($action=='failed'){
     echo "<div class='alert alert-info'>";
-        echo "<strong>{$name}</strong> No se pudo agregar a su carrito!";
+        echo "<strong>{$titulo}</strong> No se pudo agregar a su carrito!";
     echo "</div>";
 }
  
 // seleccionar productos de la bd
-$query = "SELECT p.id, p.name, p.price, ci.quantity 
-        FROM products p 
+$query = "SELECT p.id, p.titulo, p.url_image, p.orden, ci.quantity 
+        FROM banner p 
             LEFT JOIN cart_items ci
                 ON p.id = ci.product_id 
-        ORDER BY p.name";
+        ORDER BY p.titulo";
  
 $stmt = $con->prepare( $query );
 $stmt->execute();
@@ -46,7 +46,8 @@ if($num>0){
         // encabezado de la tabla de productos a mostrar
         echo "<tr>";
             echo "<th class='textAlignLeft'>Nombre del producto</th>";
-            echo "<th>Precio (USD)</th>";
+            echo "<th>Imagen</th>";
+            echo "<th>Precio (MXN)</th>";
             echo "<th style='width:5em;'>Cantidad</th>";
             echo "<th>Acciones</th>";
         echo "</tr>";
@@ -58,9 +59,12 @@ if($num>0){
             echo "<tr>";
                 echo "<td>";
                     echo "<div class='product-id' style='display:none;'>{$id}</div>";
-                    echo "<div class='product-name'>{$name}</div>";
+                    echo "<div class='product-name'>{$titulo}</div>";
+                echo "<td>";
+                    echo "<img  height='100' width='100' class='product-image' src=\"view/administrador/producto/img/banner/.$url_image ></img>";
+//            <img height="100" width="100" src="php/'.$row["imagen"].'" alt="img01" /></td><td>
                 echo "</td>";
-                echo "<td>&#36;" . number_format($price, 2, '.' , ',') . "</td>";
+                echo "<td>&#36;" . number_format($orden, 2, '.' , ',') . "</td>";
                 if(isset($quantity)){
                     echo "<td>";
                              echo "<input type='text' name='quantity' value='{$quantity}' disabled class='form-control' />";
