@@ -24,7 +24,7 @@
       <li class="dropdown"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="view/administrador/admin_login.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
+          <li><a href="view/empleado/view/empleado_login.php"><span class="glyphicon glyphicon-log-in"></span> Iniciar Sesión</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrate</a></li>
         </ul>
       </li>
