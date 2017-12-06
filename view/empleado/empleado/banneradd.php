@@ -7,7 +7,7 @@ if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
 <?php
 $title="Agregar Producto";
 /* Llamar la Cadena de Conexion*/ 
-include ("../../../../core/config.php");
+include ("../../../core/config.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
 $insert=mysqli_query($con,"insert into banner (url_image, estado) values ('$imagen_demo','0')");
@@ -50,7 +50,7 @@ $active_banner="active";
   </head>
   <body>
 
-  	<?php include ("../../../../lib/admin_navbar.php"); ?>
+  	<?php include ("../../../lib/empleado_navbar.php"); ?>
 
     <div class="container">
 		
