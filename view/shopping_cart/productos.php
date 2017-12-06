@@ -8,8 +8,8 @@ include 'head.php';
  
 // to prevent undefined index notice
 $action = isset($_GET['action']) ? $_GET['action'] : "";
-$product_id = isset($_GET['product_id']) ? $_GET['product_id'] : "1";
-$titulo = isset($_GET['name']) ? $_GET['name'] : "";
+$id = isset($_GET['id']) ? $_GET['id'] : "1";
+$titulo = isset($_GET['titulo']) ? $_GET['titulo'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "1";
  
 // mostrar mensaje
@@ -61,7 +61,7 @@ if($num>0){
                     echo "<div class='product-id' style='display:none;'>{$id}</div>";
                     echo "<div class='product-name'>{$titulo}</div>";
                 echo "<td>";
-                    echo "<img  height='100' width='100' class='product-image' src=\"view/administrador/producto/img/banner/.$url_image ></img>";
+                    echo "<img  height='125px' width='125px' class='product-image' src=../administrador/producto/img/banner/$url_image?> </img>";
 //            <img height="100" width="100" src="php/'.$row["imagen"].'" alt="img01" /></td><td>
                 echo "</td>";
                 echo "<td>&#36;" . number_format($orden, 2, '.' , ',') . "</td>";
