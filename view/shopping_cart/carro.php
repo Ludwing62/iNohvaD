@@ -103,7 +103,7 @@ if($num>0){
             echo "<span class='glyphicon glyphicon-shopping-cart'></span> Pagar";
 
             echo'<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">';
-            echo'<input type="hidden" name="cmd" value="$total">';
+            echo'<input type="hidden" name="cmd" value="_xclick">';
             echo'<input type="hidden" name="hosted_button_id" value="72FJN9M2VEYH2">';
             echo'<input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">';
             echo'<img alt="" border="0" src="https://www.sandbox.paypal.com/es_XC/i/scr/pixel.gif" width="1" height="1">';

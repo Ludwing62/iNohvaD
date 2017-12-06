@@ -17,6 +17,9 @@
                 <li <?php echo $page_title=="Products" ? "class='active'" : ""; ?> >
                     <a href="productos.php">Productos</a>
                 </li>
+                <li <?php echo $page_title=="Products" ? "class='active'" : ""; ?> >
+                    <a href="">Login</a>
+                </li>
                 <li <?php echo $page_title=="Cart" ? "class='active'" : ""; ?> >
                     <a href="carro.php">
                         <?php

@@ -1,19 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"]==null){
-  print "<script>alert(\"Acceso invalido!\");window.location='index.php';</script>";
-}
-?>
-<?php
-$title="Agregar Producto";
+$title="Editar Banner";
 /* Llamar la Cadena de Conexion*/ 
 include ("../../../../core/config.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
-$insert=mysqli_query($con,"insert into banner (url_image, estado) values ('$imagen_demo','0')");
-$sql_last=mysqli_query($con,"select LAST_INSERT_ID(id) as last from banner order by id desc limit 0,1");
-$rw=mysqli_fetch_array($sql_last);
-$id_banner=intval($rw['last']);
+$id_banner=intval($_GET['id']);
 $sql=mysqli_query($con,"select * from banner where id='$id_banner' limit 0,1");
 $count=mysqli_num_rows($sql);
 if ($count==0){
@@ -26,7 +18,6 @@ $descripcion=$rw['descripcion'];
 $url_image=$rw['url_image'];
 $orden=intval($rw['orden']);
 $estado=intval($rw['estado']);
-
 $active_config="active";
 $active_banner="active";
 ?>
@@ -49,42 +40,39 @@ $active_banner="active";
 	<link href="css/preview-image.css" rel="stylesheet">
   </head>
   <body>
-
-  	<?php include ("../../../../lib/admin_navbar.php"); ?>
+		<?php include("top_menu.php");?>
 
     <div class="container">
 		
       <!-- Main component for a primary marketing message or call to action -->
       <div class="row">
- 
+	  
 	   <ol class="breadcrumb">
 		  <li><a href="#">Inicio</a></li>
 		  <li><a href="bannerlist.php">Productos Publicados</a></li>
-		  <li class="active">Agrega Producto</li>
+		  <li class="active">Modificando Producto</li>
 		</ol>
 		 <div class="col-md-7">
-		 <h3 ><span class="glyphicon glyphicon-edit"></span> Agregando Producto</h3>
+		 <h3 ><span class="glyphicon glyphicon-edit"></span>Modificar Producto</h3>
 			<form class="form-horizontal" id="editar_banner">
 				 
 			 
 			  
 			  <div class="form-group">
-				<label for="titulo" class="col-sm-3 control-label">Nombre</label>
+				<label for="titulo" class="col-sm-3 control-label">Titulo</label>
 				<div class="col-sm-9">
 				  <input type="text" class="form-control" id="titulo" value="<?php echo $titulo;?>" required name="titulo">
 				  <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
 				</div>
 			  </div>
-			  
+
 			  <div class="form-group">
 				<label for="titulo" class="col-sm-3 control-label">Descripción</label>
 				<div class="col-sm-9">
 				  <textarea class='form-control' name="descripcion" id="descripcion" required rows=8><?php echo $descripcion;?></textarea>
 				</div>
-			  </div>	
-			  
-			
-			  
+			  </div>
+					  
 			  <div class="form-group">
 				<label for="orden" class="col-sm-3 control-label">Orden</label>
 				<div class="col-sm-9">
@@ -143,7 +131,7 @@ $active_banner="active";
 					<div class="upload-msg"></div>
 					
 				</div>
-				
+			
 			  </div>
 			  
 			
