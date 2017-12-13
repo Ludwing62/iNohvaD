@@ -4,7 +4,7 @@ include 'config/database.php';
  
 // obtener id de producto
 $id = isset($_GET['id']) ? $_GET['id'] : "";
-$name = isset($_GET['name']) ? $_GET['name'] : "";
+$nombre = isset($_GET['nombre']) ? $_GET['nombre'] : "";
 $user_id=1;
  
 // eliminar consulta
@@ -20,12 +20,12 @@ $stmt->bindParam(2, $user_id);
 // ejecutar consulta
 if($stmt->execute()){
     // redirigir y decirle al usuario que el producto fue eliminado
-    header('Location: carro.php?action=removed&id=' . $id . '&name=' . $name);
+    header('Location: carro.php?action=removed&id=' . $id . '&nombre=' . $nombre);
 }
  
 // si se elimino el error
 else{
     // redirigir y decirle al usuario que fallo
-    header('Location: carro.php?action=failed&id=' . $id . '&name=' . $name);
+    header('Location: carro.php?action=failed&id=' . $id . '&nombre=' . $nombre);
 }
 ?>

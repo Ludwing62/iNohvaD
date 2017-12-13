@@ -1,25 +1,25 @@
 <?php
 session_start();
-$title="Editar Banner";
+$title="Editar producto";
 /* Llamar la Cadena de Conexion*/ 
 include ("../../../core/config.php");
 //Insert un nuevo producto
 $imagen_demo="demo.png";
-$id_banner=intval($_GET['id']);
-$sql=mysqli_query($con,"select * from banner where id='$id_banner' limit 0,1");
+$id_producto=intval($_GET['id']);
+$sql=mysqli_query($con,"select * from producto where id='$id_producto' limit 0,1");
 $count=mysqli_num_rows($sql);
 if ($count==0){
 	//header("location: bannerlist.php");
 	//exit;
 }
 $rw=mysqli_fetch_array($sql);
-$titulo=$rw['titulo'];
+$nombre=$rw['nombre'];
 $descripcion=$rw['descripcion'];
 $url_image=$rw['url_image'];
-$orden=intval($rw['orden']);
+$precio=intval($rw['precio']);
 $estado=intval($rw['estado']);
 $active_config="active";
-$active_banner="active";
+$active_producto="active";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,29 +54,29 @@ $active_banner="active";
 		</ol>
 		 <div class="col-md-7">
 		 <h3 ><span class="glyphicon glyphicon-edit"></span> Modificar Producto</h3>
-			<form class="form-horizontal" id="editar_banner">
+			<form class="form-horizontal" id="editar_producto">
 				 
 			 
 			  
 			  <div class="form-group">
-				<label for="titulo" class="col-sm-3 control-label">Titulo</label>
+				<label for="nombre" class="col-sm-3 control-label">nombre</label>
 				<div class="col-sm-9">
-				  <input type="text" class="form-control" id="titulo" value="<?php echo $titulo;?>" required name="titulo">
-				  <input type="hidden" class="form-control" id="id_banner" value="<?php echo intval($id_banner);?>" name="id_banner">
+				  <input type="text" class="form-control" id="nombre" value="<?php echo $nombre;?>" required name="nombre">
+				  <input type="hidden" class="form-control" id="id_producto" value="<?php echo intval($id_producto);?>" name="id_producto">
 				</div>
 			  </div>
 
 			  <div class="form-group">
-				<label for="titulo" class="col-sm-3 control-label">Descripción</label>
+				<label for="nombre" class="col-sm-3 control-label">Descripción</label>
 				<div class="col-sm-9">
 				  <textarea class='form-control' name="descripcion" id="descripcion" required rows=8><?php echo $descripcion;?></textarea>
 				</div>
 			  </div>
 					  
 			  <div class="form-group">
-				<label for="orden" class="col-sm-3 control-label">Orden</label>
+				<label for="precio" class="col-sm-3 control-label">precio</label>
 				<div class="col-sm-9">
-				  <input type="number" class="form-control" id="orden" name="orden" value="<?php echo $orden;?>">
+				  <input type="number" class="form-control" id="precio" name="precio" value="<?php echo $precio;?>">
 				</div>
 			  </div>
 			  
@@ -158,12 +158,12 @@ $active_banner="active";
 	<script>
 			function upload_image(){
 				$(".upload-msg").text('Cargando...');
-				var id_banner=$("#id_banner").val();
+				var id_producto=$("#id_producto").val();
 				var inputFileImage = document.getElementById("fileToUpload");
 				var file = inputFileImage.files[0];
 				var data = new FormData();
 				data.append('fileToUpload',file);
-				data.append('id',id_banner);
+				data.append('id',id_producto);
 				
 				$.ajax({
 					url: "ajax/upload_banner.php",        // Url to which the request is send
@@ -206,12 +206,12 @@ $active_banner="active";
 			
 	</script>
 	<script>
-		$("#editar_banner").submit(function(e) {
+		$("#editar_producto").submit(function(e) {
 			
 			  $.ajax({
 				  url: "ajax/editar_banner.php",
 				  type: "POST",
-				  data: $("#editar_banner").serialize(),
+				  data: $("#editar_producto").serialize(),
 				   beforeSend: function(objeto){
 					$("#loader").html("Cargando...");
 				  },

@@ -6,8 +6,8 @@ $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['a
 if($action == 'ajax'){
 	//Elimino producto
 	if (isset($_REQUEST['id'])){
-		$id_banner=intval($_REQUEST['id']);
-		if ($delete=mysqli_query($con,"delete from banner where id='$id_banner'")){
+		$id_producto=intval($_REQUEST['id']);
+		if ($delete=mysqli_query($con,"delete from producto where id='$id_producto'")){
 			$message= "Datos eliminados satisfactoriamente";
 		} else {
 			$error= "No se pudo eliminar los datos";
@@ -15,7 +15,7 @@ if($action == 'ajax'){
 	}
 	
 	
-	$tables="banner";
+	$tables="producto";
 	$sWhere=" ";
 	$sWhere.=" ";
 	
@@ -66,7 +66,7 @@ if($action == 'ajax'){
 			<?php
 				while($row = mysqli_fetch_array($query)){
 					$url_image=$row['url_image'];
-					$titulo=$row['titulo'];
+					$nombre=$row['nombre'];
 					$id_slide=$row['id'];
 				
 					?>
@@ -75,7 +75,7 @@ if($action == 'ajax'){
 						<div class="thumbnail">
 						  <img src="../img/banner/<?php echo $url_image;?>" alt="...">
 						  <div class="caption">
-							<h3><?php echo $titulo;?></h3>
+							<h3><?php echo $nombre;?></h3>
 							
 							<p class='text-right'><a href="banneredit.php?id=<?php echo intval($id_slide);?>" class="btn btn-info" role="button"><i class='glyphicon glyphicon-edit'></i> Editar</a> <button type="button" class="btn btn-danger" onclick="eliminar_slide('<?php echo $id_slide;?>');" role="button"><i class='glyphicon glyphicon-trash'></i> Eliminar</button></p>
 						  </div>

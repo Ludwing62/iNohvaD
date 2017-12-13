@@ -8,37 +8,37 @@ include 'head.php';
  
 // parametros
 $action = isset($_GET['action']) ? $_GET['action'] : "";
-$titulo = isset($_GET['titulo']) ? $_GET['titulo'] : "";
+$nombre = isset($_GET['nombre']) ? $_GET['nombre'] : "";
  
 // Mensaje por si no hay nada
 if($action=='removed'){
     echo "<div class='alert alert-info'>";
-        echo "<strong>{$titulo}</strong> fue eliminado del carrito!";
+        echo "<strong>{$nombre}</strong> fue eliminado del carrito!";
     echo "</div>";
 }
  
 else if($action=='quantity_updated'){
     echo "<div class='alert alert-info'>";
-        echo "<strong>{$titulo}</strong> la cantidad ha sido actualizada!";
+        echo "<strong>{$nombre}</strong> la cantidad ha sido actualizada!";
     echo "</div>";
 }
  
 else if($action=='failed'){
         echo "<div class='alert alert-info'>";
-        echo "<strong>{$titulo}</strong> no se pudo actualizar la cantidad!";
+        echo "<strong>{$nombre}</strong> no se pudo actualizar la cantidad!";
     echo "</div>";
 }
  
 else if($action=='invalid_value'){
         echo "<div class='alert alert-info'>";
-        echo "<strong>{$titulo}</strong> cantidad es inválida!";
+        echo "<strong>{$nombre}</strong> cantidad es inválida!";
     echo "</div>";
 }
  
 // Seleccionar productos en el carro
-$query="SELECT p.id, p.titulo, p.orden, ci.quantity, ci.quantity * p.orden AS subtotal  
+$query="SELECT p.id, p.nombre, p.precio, ci.quantity, ci.quantity * p.precio AS subtotal  
             FROM cart_items ci  
-                LEFT JOIN banner p 
+                LEFT JOIN producto p 
                     ON ci.product_id = p.id";
  
 $stmt=$con->prepare( $query );
@@ -69,9 +69,9 @@ if($num>0){
         echo "<tr>";
             echo "<td>";
                         echo "<div class='product-id' style='display:none;'>{$id}</div>";
-                        echo "<div class='product-name'>{$titulo}</div>";
+                        echo "<div class='product-name'>{$nombre}</div>";
             echo "</td>";
-            echo "<td>&#36;" . number_format($orden, 2, '.', ',') . "</td>";
+            echo "<td>&#36;" . number_format($precio, 2, '.', ',') . "</td>";
             echo "<td>";
                         echo "<div class='input-group'>";
                             echo "<input type='number' name='quantity' value='{$quantity}' class='form-control'>";
@@ -84,7 +84,7 @@ if($num>0){
                 echo "</td>";
                 echo "<td>&#36;" . number_format($subtotal, 2, '.', ',') . "</td>";
                 echo "<td>";
-            echo "<a href='eliminar.php?id={$id}&name={$titulo}' class='btn btn-danger'>";
+            echo "<a href='eliminar.php?id={$id}&name={$nombre}' class='btn btn-danger'>";
                         echo "<span class='glyphicon glyphicon-remove'></span> Quitar del carrito";
             echo "</a>";
             echo "</td>";

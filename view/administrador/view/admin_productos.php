@@ -194,7 +194,7 @@ body
     <?php
         include '../../../core/config.php';
 
-        $titulo3 = "Eliminar Producto";
+        $nombre3 = "Eliminar Producto";
         $link = Conectarse();
         $result= mysqli_query($link,"Select * from producto");
         while ($row=mysqli_fetch_row($result))

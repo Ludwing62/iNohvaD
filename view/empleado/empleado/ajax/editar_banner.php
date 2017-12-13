@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["titulo"])){
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST["nombre"])){
 	/* Llamar la Cadena de Conexion*/ 
 	include ("../../../../../core/config.php");
 	// escaping, additionally removing everything that could be (html/javascript-) code
-     $titulo = mysqli_real_escape_string($con,(strip_tags($_POST['titulo'], ENT_QUOTES)));
+     $nombre = mysqli_real_escape_string($con,(strip_tags($_POST['nombre'], ENT_QUOTES)));
 	 $descripcion = mysqli_real_escape_string($con,($_POST['descripcion']));
-	 $orden = intval($_POST['orden']);
+	 $precio = intval($_POST['precio']);
 	 $estado = intval($_POST['estado']);
-	 $id_banner=intval($_POST['id_banner']);
-	 $sql="UPDATE banner SET titulo='$titulo', descripcion='$descripcion', orden='$orden', estado='$estado' WHERE id='$id_banner'";
+	 $id_producto=intval($_POST['id_producto']);
+	 $sql="UPDATE producto SET nombre='$nombre', descripcion='$descripcion', precio='$precio', estado='$estado' WHERE id='$id_producto'";
 	 $query = mysqli_query($con,$sql);
 	// if user has been added successfully
 	if ($query) {

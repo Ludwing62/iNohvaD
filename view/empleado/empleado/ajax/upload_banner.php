@@ -3,7 +3,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["fileToUpload"]["type"]
 /* Llamar la Cadena de Conexion*/ 
 include ("../../../../../core/config.php");
 
-$id_banner=intval($_POST['id']);
+$id_producto=intval($_POST['id']);
 $target_dir = "../../img/banner/";
 $carpeta=$target_dir;
 if (!file_exists($carpeta)) {
@@ -48,7 +48,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
        $messages[]= "El Archivo ha sido subido correctamente.";
 	   $ruta=$_FILES["fileToUpload"]["name"];
-	 $update=mysqli_query($con,"UPDATE banner SET url_image='$ruta' WHERE id='$id_banner'");
+	 $update=mysqli_query($con,"UPDATE producto SET url_image='$ruta' WHERE id='$id_producto'");
 	   
     } else {
        $errors[]= "Lo sentimos, hubo un error subiendo el archivo.";

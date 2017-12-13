@@ -4,7 +4,7 @@ include 'config/database.php';
  
 // obtener id de producto
 $id = isset($_GET['id']) ? $_GET['id'] : "";
-$titulo = isset($_GET['titulo']) ? $_GET['titulo'] : "";
+$nombre = isset($_GET['nombre']) ? $_GET['nombre'] : "";
 $quantity = isset($_GET['quantity']) ? $_GET['quantity'] : "";
 $quantity=intval($quantity);
 $user_id=1;
@@ -23,12 +23,12 @@ $stmt->bindParam(3, $user_id);
 // ejecutar consulta
 if($stmt->execute()){
     // redirigir y decir al usuario que el producto se elimino
-    header('Location: carro.php?action=quantity_updated&id=' . $id . '&name=' . $titulo);
+    header('Location: carro.php?action=quantity_updated&id=' . $id . '&nombre=' . $nombre);
 }
  
 // si se elimina el error
 else{
     // redirigir y decirle al usuario que hubo un error
-    header('Location: carro.php?action=failed&id=' . $id . '&name=' . $titulo);
+    header('Location: carro.php?action=failed&id=' . $id . '&nombre=' . $nombre);
 }
 ?>
