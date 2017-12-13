@@ -29,13 +29,13 @@ include ("../../../lib/admin_navbar.php");
 				<h1 class="page-header" align="center">Vista Previa en el Sitio WEB</h1>
 			<?php
 				$nums=1;
-				$sql_banner_top=mysqli_query($con,"select * from banner where estado=1 order by orden ");
-				while($rw_banner_top=mysqli_fetch_array($sql_banner_top)){
+				$sql_producto_top=mysqli_query($con,"select * from producto where estado=1 order by precio ");
+				while($rw_producto_top=mysqli_fetch_array($sql_producto_top)){
 					?>
 					
 					<div class="col-lg-3 col-md-4 col-xs-6 thumb">
-						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="<?php echo $rw_banner_top['titulo'];?>" data-caption="<?php echo $rw_banner_top['descripcion'];	?>" data-image="img/banner/<?php echo $rw_banner_top['url_image'];?>" data-target="#image-gallery">
-							<img class="img-responsive" src="img/banner/<?php echo $rw_banner_top['url_image'];?>" alt="Another alt text">
+						<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="<?php echo $rw_producto_top['nombre'];?>" data-caption="<?php echo $rw_producto_top['descripcion'];	?>" data-image="img/banner/<?php echo $rw_producto_top['url_image'];?>" data-target="#image-gallery">
+							<img class="img-responsive" src="img/banner/<?php echo $rw_producto_top['url_image'];?>" alt="Another alt text">
 						</a>
 					</div>
 					<?php

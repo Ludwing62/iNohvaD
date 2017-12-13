@@ -4,7 +4,7 @@ include 'config/database.php';
  
 //detalles del producto
 $id = isset($_GET['id']) ?  $_GET['id'] : die;
-$name = isset($_GET['name']) ?  $_GET['name'] : die;
+$nombre = isset($_GET['nombre']) ?  $_GET['nombre'] : die;
 $quantity  = isset($_GET['quantity']) ?  $_GET['quantity'] : die;
 $user_id=1;
 $created=date('Y-m-d H:i:s');
@@ -23,11 +23,11 @@ $stmt->bindParam(4, $created);
  
 // si la ia insercion a la bd tuvo exito
 if($stmt->execute()){
-    header('Location: productos.php?action=added&id=' . $id . '&name=' . $titulo);
+    header('Location: productos.php?action=added&id=' . $id . '&nombre=' . $nombre);
 }
  
 // si falla
 else{
-     header('Location: productos.php?action=failed&id=' . $id . '&name=' . $titulo);
+     header('Location: productos.php?action=failed&id=' . $id . '&nombre=' . $nomb);
 }
  

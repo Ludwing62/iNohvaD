@@ -9,7 +9,7 @@ $title="Productos Publicados";
 /* Llamar la Cadena de Conexion*/ 
 include ("../../../../core/config.php");
 $active_config="active";
-$active_banner="active";
+$active_producto="active";
 
 ?>
 <!DOCTYPE html>
